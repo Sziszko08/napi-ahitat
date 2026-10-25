@@ -17,7 +17,7 @@ textarea{width:100%;min-height:90px;font:inherit;font-size:.95em;background:var(
 .stat{font-family:system-ui,sans-serif;font-size:.85em;color:var(--mu)}.fav li{margin:6px 0;cursor:pointer}footer{font-family:system-ui,sans-serif;font-size:.75em;color:var(--mu);text-align:center;margin-top:30px}
 #hint{display:none}
 </style><script data-goatcounter="https://napiahitat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></head><body><div class="w">
-<header><h1>✝ Napi áhítat</h1><div class="row"><button id="th">🌙</button><button id="fm">A−</button><button id="fp">A+</button></div></header>
+<header><h1>📖 Napi áhítat</h1><div class="row"><button id="th">🌙</button><button id="fm">A−</button><button id="fp">A+</button></div></header>
 <div class="row" style="justify-content:center;margin-top:10px"><button id="pv">‹ Előző</button><button class="p" id="td">Ma</button><input type="date" id="dp"><button id="nx">Következő ›</button></div>
 <p class="date" id="dt"></p><div class="title" id="ti"></div>
 <div class="card"><div class="lbl">Napi igevers</div><div class="verse" id="vs"></div><div class="ref" id="rf"></div>
@@ -62,7 +62,7 @@ $('th').onclick=()=>{const d=!document.documentElement.classList.contains('dark'
 const setF=f=>{f=Math.max(14,Math.min(24,f));document.documentElement.style.setProperty('--fs',f+'px');S.set('fs',f)};setF(S.get('fs',17));
 $('fm').onclick=()=>setF(S.get('fs',17)-1);$('fp').onclick=()=>setF(S.get('fs',17)+1);
 // PWA
-const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="96" fill="#9a6b3f"/><path d="M226 96h60v100h90v60h-90v160h-60V256h-90v-60h90z" fill="#fffdf9"/></svg>`;
+const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="96" fill="#9a6b3f"/><g fill="#fffdf9" stroke="#9a6b3f" stroke-width="8" stroke-linejoin="round"><path d="M256 150C215 120 150 110 84 122V372C150 360 215 370 256 400Z"/><path d="M256 150C297 120 362 110 428 122V372C362 360 297 370 256 400Z"/></g><g stroke="#9a6b3f" stroke-width="10" stroke-linecap="round" fill="none"><path d="M120 176C150 172 185 176 218 190M120 220C150 216 185 220 218 234M120 264C150 260 185 264 218 278M294 190C327 176 362 172 392 176M294 234C327 220 362 216 392 220M294 278C327 264 362 260 392 264"/></g><path d="M256 400L256 150" stroke="#9a6b3f" stroke-width="10"/></svg>`;
 const ico='data:image/svg+xml,'+encodeURIComponent(svg);$('ic').href=ico;$('ai').href=ico;
 const man={name:'Napi áhítat',short_name:'Áhítat',start_url:location.href.split('#')[0],display:'standalone',background_color:'#faf6ef',theme_color:'#9a6b3f',lang:'hu',icons:[{src:ico,sizes:'512x512',type:'image/svg+xml',purpose:'any'}]};
 $('mf').href=URL.createObjectURL(new Blob([JSON.stringify(man)],{type:'application/manifest+json'}));
